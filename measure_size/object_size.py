@@ -13,7 +13,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--image", required=True,
     help="path to the input image")
 ap.add_argument("-w", "--width", type=float, required=True,
-    help="width of the left-most object in the image (in inches)")
+    help="width of the left-most object in the image (in centimeters)")
 args = vars(ap.parse_args())
 
 # load the image, convert it to grayscale, and blur it slightly
@@ -88,7 +88,7 @@ for c in cnts:
     dB = dist.euclidean((tlblX, tlblY), (trbrX, trbrY))
 
     # if the pixels per metric has not been initialized, then compute it as the
-    # ratio of pixels to supplied metric (in this case, inches)
+    # ratio of pixels to supplied metric (in this case, centimeter)
     if pixelsPerMetric is None:
         pixelsPerMetric = dB / args["width"]
 
@@ -97,9 +97,9 @@ for c in cnts:
     dimB = dB / pixelsPerMetric
 
     # draw the object sizes on the image
-    cv2.putText(orig, "{:.1f} in".format(dimA), (int(tltrX - 15), int(tltrY - 10)),
+    cv2.putText(orig, "{:.1f} cm".format(dimA), (int(tltrX - 15), int(tltrY - 10)),
         cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2)
-    cv2.putText(orig, "{:.1f} in".format(dimB), (int(trbrX + 10), int(trbrY)),
+    cv2.putText(orig, "{:.1f} cm".format(dimB), (int(trbrX + 10), int(trbrY)),
         cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2)
 
     # show the output image
