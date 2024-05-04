@@ -1,0 +1,8 @@
+dlib
+imutils
+scipy
+numpy
+opencv-python
+playsound
+pyobjc
+wheel
