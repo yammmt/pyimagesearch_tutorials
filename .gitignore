@@ -167,3 +167,6 @@ cython_debug/
 # input image files
 *.jpg
 *.png
+
+# distributed neither by me nor by pyimagesearch
+shape_predictor_68_face_landmarks.dat
