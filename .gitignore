@@ -170,6 +170,7 @@ cython_debug/
 
 # distributed neither by me nor by pyimagesearch
 shape_predictor_68_face_landmarks.dat
+*.zip
 
 # sound file
 *.wav

@@ -1,0 +1,13 @@
+imutils
+h5py
+keras
+matplotlib
+numpy
+opencv-python
+scipy
+scikit-image
+scikit-learn
+pillow
+progressbar2
+requests
+tensorflow
